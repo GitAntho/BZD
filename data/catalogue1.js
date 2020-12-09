@@ -1,11 +1,21 @@
-var catalog = [{
+var catalog1 = [{
     "name" : "Nounours",
-    "description" : "un joli nounours",
-    "image" : "images/nounours1.jpg",
+    "description" : "Un joli nounours",
+    "image" : "data/images/bb.jpg",
     "price" : "35"
 }, {
-    "name" : "Nounours 2",
-    "description" : "un joli nounours 2",
-    "image" : "images/nounours2.jpg",
-    "price" : "34"
+    "name" : "Gros Nounours",
+    "description" : "Un nounours énorme",
+    "image" : "data/images/mina_gamer.jpg",
+    "price" : "350"
+}, {
+    "name" : "Nounours Bio",
+    "description" : "Un nounours pure coton bio",
+    "image" : "data/images/matrix.jpg",
+    "price" : "55"
+} , {
+    "name" : "Petit Nounours",
+    "description" : "Un petit nounours",
+    "image" : "data/images/lotr1.jpg",
+    "price" : "15"
 }];

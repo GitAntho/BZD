@@ -12,35 +12,87 @@
     <div class="container">
         <div class="row borderRow mt-5">
             <div class="col-9 borderCol">
-                <h2>Boutique</h2>
-                <div class="row mt-3">
-                    <div class="col-3">
-                        <h6>Nom</h6>
-                        <p id="name"></p>
-                        <h6>Description</h6>
-                        <p id="description"></p>
-                        <p>Article 1 exemple</p>
-                        <button type="submit" class="btn btn-success" id="valider">Valdier</button>
+                <h2 class="my-5 text-center">Boutique</h2>
+                <div class="row text-center mb-5">
+                    <div class="col-4">
+                        <button type="submit" class="mb-3 btn btn-primary" id="categorie1">Nounours</button>
                     </div>
-                    <div class="col-3" id="test">
-                        <p>Article 2 exemple</p>
-                        <p>Article 2 exemple</p>
+                    <div class="col-4">
+                        <button type="submit" class="mb-3 btn btn-primary" id="categorie2">Lasers</button>
                     </div>
-                    <div class="col-3">
-                        <p>Article 1 exemple</p>
-                        <p>Article 1 exemple</p>
-                    </div>
-                    <div class="col-3">
-                        <p>Article 1 exemple</p>
-                        <p>Article 1 exemple</p>
+                    <div class="col-4">
+                        <button type="submit" class="mb-3 btn btn-primary" id="categorie3">Briquets</button>
                     </div>
                 </div>
+
+                <div class="alert alert-danger d-none" id="alert">
+                    <h2>VOUS NE POUVEZ PAS AVOIR PLUS DE 9 ARTICLES</h2>
+                </div>
+                <div class="row mt-3 d-none" id="product-display">
+
+                    <!-- Product 1 -->
+
+                    <div class="col-3">
+                        <img src ="#" id="image0" class="img-fluid mb-3"></img>
+                        <h5>Nom</h5>
+                        <p id="name0"></p>
+                        <h5>Description</h5>
+                        <p id="description0"></p>
+                        <h5>Prix</h5>
+                        <p id="price0"></p>
+                        <button type="submit" class="mb-3 btn btn-success" id="product1">Ajouter au panier <i class="fas fa-cart-arrow-down"></i></button>
+                    </div>
+
+
+                    <!-- Product 2 -->
+
+                    <div class="col-3">
+                        <img src ="#" id="image1" class="img-fluid mb-3"></img>
+                        <h5>Nom</h5>
+                        <p id="name1"></p>
+                        <h5>Description</h5>
+                        <p id="description1"></p>
+                        <h5>Prix</h5>
+                        <p id="price1"></p>
+                        <button type="submit" class="mb-3 btn btn-success" id="product2">Ajouter au panier <i class="fas fa-cart-arrow-down"></i></button>
+                    </div>
+
+
+                    <!-- Product 3 -->
+
+                    <div class="col-3">
+                        <img src ="#" id="image2" class="img-fluid mb-3"></img>
+                        <h5>Nom</h5>
+                        <p id="name2"></p>
+                        <h5>Description</h5>
+                        <p id="description2"></p>
+                        <h5>Prix</h5>
+                        <p id="price2"></p>
+                        <button type="submit" class="mb-3 btn btn-success" id="product3">Ajouter au panier <i class="fas fa-cart-arrow-down"></i></button>
+                    </div>
+
+
+                    <!-- Product 4 -->
+
+                    <div class="col-3">
+                        <img src ="#" id="image3" class="img-fluid mb-3"></img>
+                        <h5>Nom</h5>
+                        <p id="name3"></p>
+                        <h5>Description</h5>
+                        <p id="description3"></p>
+                        <h5>Prix</h5>
+                        <p id="price3"></p>
+                        <button type="submit" class="mb-3 btn btn-success" id="product4">Ajouter au panier <i class="fas fa-cart-arrow-down"></i></button>
+                    </div>
+                    
+                </div>
             </div>
-            <div class="col-3 borderCol">
-                <p class="h4 borderH4">Champ de recherche</p>
-                <p class="h4 borderH4">Total</p>
-                <p class="h4 borderH4">Panier</p>
-                <p>Article 1 exemple</p>
+            <div class="col-3 borderCol full-size">
+                <p class="h4 text-center" id="search">Champ de recherche</p>
+                <p class="h4 text-center" id="amount">Montant Total : <span id="total">0</span>€</p>
+                <div id="basketDiv">
+                    <p class="h4 mb-4 text-center" id="basket">Panier Vide</p>
+                </div>
             </div>
         </div>
     </div>
@@ -58,5 +110,7 @@
     <script src="https://kit.fontawesome.com/cce271c364.js" crossorigin="anonymous"></script>
     <script src="script/main.js"></script>
     <script src="data/Catalogue1.js"></script>
+    <script src="data/Catalogue2.js"></script>
+    <script src="data/Catalogue3.js"></script>
 </body>
 </html>

@@ -2,3 +2,46 @@
 .borderCol {
     border: 1px solid black
 }
+
+.red {
+    color: red !important;
+}
+
+.full-size {
+    padding: 0 !important;
+}
+
+#search,
+#amount {
+    border-bottom: 2px solid black;
+    padding: 10px 0;
+    margin-bottom: 0 !important;
+}
+
+#basketDiv {
+    padding: 10px 0;
+    margin-bottom: 0 !important;
+}
+
+#basketDiv>p {
+    padding: 0 10px;
+}
+
+.nav {
+    background-color:red;
+}
+
+#categorie1,
+#categorie2,
+#categorie3 {
+    margin-bottom: 0 !important;
+}
+
+html,
+body {
+    background-color: #d6d6d6 !important;
+}
+
+.container {
+    background-color: white !important;
+}
