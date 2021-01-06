@@ -24,28 +24,28 @@ $("#categorie3").click(function() {
 
 // Click Add Product 1
 
-$("#product1").click(function() {
+$("#product0").click(function() {
     addProduct(0, numberProduct);
 })
 
 
 // Click Add Product 2
 
-$("#product2").click(function() {
+$("#product1").click(function() {
     addProduct(1, numberProduct);
 })
 
 
 // Click Add Product 3
 
-$("#product3").click(function() {
+$("#product2").click(function() {
     addProduct(2, numberProduct);
 })
 
 
 // Click Add Product 4
 
-$("#product4").click(function() {        
+$("#product3").click(function() {        
     addProduct(3, numberProduct);
 })
 
@@ -62,6 +62,7 @@ $("body").on("click", ".press", function() {
 
 function displayProduct(number) {
     $("#product-display").removeClass("d-none");
+
 
     var i = 0;
     while(i < 4) {
@@ -81,6 +82,9 @@ function displayProduct(number) {
         $("#description" + i).html(catalog.description);
         $("#image" + i).attr('src', catalog.image);
         $("#price" + i).html(catalog.price + "€");
+        $("#totalPrice" + i).html("0€");
+        $('#quantity' + i + ':input[type="number"]').val("");
+        $('#product' + i).prop('disabled', true);
         i++
     }
 }
@@ -89,7 +93,7 @@ function displayProduct(number) {
 function addProduct(number, count) {
     if(count <= 8) {
         var name = $("#name" + number).html();
-        var price = parseInt($("#price" + number).html());
+        var price = parseInt($("#totalPrice" + number).html());
         var total = parseInt($("#total").html()) + price;
         
         numberProduct++;
@@ -129,3 +133,87 @@ function removeProduct(price) {
     $("#total").html(total);
 }
 
+
+// Change number price 1
+
+$('#quantity0:input[type="number"]').keyup(function() {
+    price = parseInt($('#price0').html().slice(0, -1));
+    changeNumberKey(0, price);
+})
+
+$('#quantity0:input[type="number"]').click(function () {
+    price = parseInt($('#price0').html().slice(0, -1));
+    changeNumberClick(0, price);
+});
+
+
+// Change number price 2
+
+$('#quantity1:input[type="number"]').keyup(function() {
+    price = parseInt($('#price1').html().slice(0, -1));
+    changeNumberKey(1, price);
+})
+
+$('#quantity1:input[type="number"]').click(function () {
+    price = parseInt($('#price1').html().slice(0, -1));
+    changeNumberClick(1, price);
+});
+
+
+// Change number price 3
+
+$('#quantity2:input[type="number"]').keyup(function() {
+    price = parseInt($('#price2').html().slice(0, -1));
+    changeNumberKey(2, price);
+})
+
+$('#quantity2:input[type="number"]').click(function () {
+    price = parseInt($('#price2').html().slice(0, -1));
+    changeNumberClick(2, price);
+});
+
+
+// Change number price 4
+
+$('#quantity3:input[type="number"]').keyup(function() {
+    price = parseInt($('#price3').html().slice(0, -1));
+    changeNumberKey(3, price);
+})
+
+$('#quantity3:input[type="number"]').click(function () {
+    price = parseInt($('#price3').html().slice(0, -1));
+    changeNumberClick(3, price);
+});
+
+
+function changeNumberKey(number1, number2) {
+    if($('#quantity' + number1 + ':input[type="number"]').val().length > 1) {
+        $('#quantity' + number1 + ':input[type="number"]').val("");
+        $('#totalPrice' + number1).html("0€");
+        $("#wrong" + number1).toggleClass("d-none");
+        $('#product' + number1).prop('disabled', true);
+        setTimeout(function() {
+            $("#wrong" + number1).toggleClass("d-none");
+        }, 3e3)
+    } else {
+        valInput = $('#quantity' + number1 + ':input[type="number"]').val();
+        newPrice = valInput * number2;
+        $('#totalPrice' + number1).html(newPrice + '€');
+        if($('#totalPrice' + number1).html() == '0€'){
+            $('#product' + number1).prop('disabled', true);
+        } else {
+            $('#product' + number1).prop('disabled', false);
+        }
+    }
+}
+
+function changeNumberClick(number1, number2) {
+    valInput = $('#quantity' + number1 + ':input[type="number"]').val();
+    newPrice = valInput * number2;
+    $('#totalPrice' + number1).html(newPrice + '€');
+    if($('#totalPrice' + number1).html() == '0€'){
+        $('#product' + number1).prop('disabled', true);
+    } else {
+        $('#product' + number1).prop('disabled', false);
+    }
+}

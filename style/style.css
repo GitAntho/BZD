@@ -45,3 +45,11 @@ body {
 .container {
     background-color: white !important;
 }
+
+.wrong {
+    color: red;
+}
+
+.btn:disabled {
+    opacity: 0.25 !important;
+}
