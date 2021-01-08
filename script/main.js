@@ -151,8 +151,6 @@ function removeProduct(price, name) {
 
     allName.splice($.inArray(name, allName), 1);
 
-    console.log(allName);
-
     numberOfProduct();
 
     $("#total").html(total);
