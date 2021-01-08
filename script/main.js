@@ -26,36 +26,28 @@ $("#categorie3").click(function() {
 // Click Add Product 1
 
 $("#product0").click(function() {
-    var quantity = $('#quantity0:input[type="number"]').val();
-    var name = $('#name0').html().replace(/ /g, '');
-    addProduct(0, quantity, name);
+    addProduct(0);
 })
 
 
 // Click Add Product 2
 
 $("#product1").click(function() {
-    var quantity = $('#quantity1:input[type="number"]').val();
-    var name = $('#name1').html().replace(/ /g, '');
-    addProduct(1, quantity, name);
+    addProduct(1);
 })
 
 
 // Click Add Product 3
 
 $("#product2").click(function() {
-    var quantity = $('#quantity2:input[type="number"]').val();
-    var name = $('#name2').html().replace(/ /g, '');
-    addProduct(2, quantity, name);
+    addProduct(2);
 })
 
 
 // Click Add Product 4
 
 $("#product3").click(function() {
-    var quantity = $('#quantity3:input[type="number"]').val();
-    var name = $('#name3').html().replace(/ /g, '');
-    addProduct(3, quantity, name);
+    addProduct(3);
 })
 
 
@@ -63,8 +55,11 @@ $("#product3").click(function() {
 
 $("body").on("click", ".press", function() {
     var price = $(this).parent().attr('class');
+    var name = $(this).parent().attr('id');
+    var quantity = parseInt($("#" + name + "Span").html());
+    var removePrice = price * quantity;
     $(this).parent().remove();
-    removeProduct(price);
+    removeProduct(removePrice, name);
 
 })
 
@@ -98,31 +93,48 @@ function displayProduct(number) {
     }
 }
 
-function addProduct(number, quantity, nameProduct) {
+function addProduct(number) {
+    var quantity = $('#quantity' + number + ':input[type="number"]').val();
+    var nameProduct = $('#name' + number).html().replace(/ /g, '');
+    var totalPrice = parseInt($("#totalPrice" + number).html().slice(0, -1));
+    var total = parseInt($("#total").html()) + totalPrice;
+
+    $('#quantity' + number + ':input[type="number"]').val(0);
+    $("#totalPrice" + number).html('0€');
+    $('#product' + number).prop('disabled', true);
+    
     if(allName.includes(nameProduct)) {
         var numberSpan = parseInt($('#' + nameProduct + "Span").html());
 
         if(numberSpan + parseInt(quantity) <= 9) {
             var newNumber = numberSpan + parseInt(quantity);
 
+            $("#total").html(total);
+
             $("#" + nameProduct + "Span").html(newNumber);
         } else {
-            console.log("C'est chaud");
+            $("#alert").toggleClass("d-none");
+            setTimeout(function() {
+                $("#alert").toggleClass("d-none");
+            }, 3e3)
         }
     } else {
-        allName.push(nameProduct);
         var price = parseInt($('#price' + number).html());
         var chiffre = quantity;
+        
+        numberProduct++;
+        
+        numberOfProduct();
+
+        allName.push(nameProduct);
+
+        $("#total").html(total);
 
         $("#basketDiv").append("<p id=" + nameProduct + " class='" + price + "'>" + nameProduct + " (<span id='" + nameProduct + "Span'>" + chiffre + "</span>)<button type='submit' class='press btn red'><i class='fas fa-minus-circle'></i></button></p>");
     }
 }
 
-function removeProduct(price) {
-    var total = parseInt($("#total").html()) - price;
-
-    numberProduct--;
-
+function numberOfProduct() {
     if(numberProduct == 1) {
         $("#basket").html("Panier : " + numberProduct + " article");
     } else if(numberProduct > 1) {
@@ -130,6 +142,18 @@ function removeProduct(price) {
     } else {
         $("#basket").html("Panier Vide");
     }
+}
+
+function removeProduct(price, name) {
+    var total = parseInt($("#total").html()) - price;
+
+    numberProduct--;
+
+    allName.splice($.inArray(name, allName), 1);
+
+    console.log(allName);
+
+    numberOfProduct();
 
     $("#total").html(total);
 }
