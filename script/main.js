@@ -1,4 +1,5 @@
 var numberProduct = 0;
+var allName = [];
 
 
 // Category 1
@@ -25,28 +26,36 @@ $("#categorie3").click(function() {
 // Click Add Product 1
 
 $("#product0").click(function() {
-    addProduct(0, numberProduct);
+    var quantity = $('#quantity0:input[type="number"]').val();
+    var name = $('#name0').html().replace(/ /g, '');
+    addProduct(0, quantity, name);
 })
 
 
 // Click Add Product 2
 
 $("#product1").click(function() {
-    addProduct(1, numberProduct);
+    var quantity = $('#quantity1:input[type="number"]').val();
+    var name = $('#name1').html().replace(/ /g, '');
+    addProduct(1, quantity, name);
 })
 
 
 // Click Add Product 3
 
 $("#product2").click(function() {
-    addProduct(2, numberProduct);
+    var quantity = $('#quantity2:input[type="number"]').val();
+    var name = $('#name2').html().replace(/ /g, '');
+    addProduct(2, quantity, name);
 })
 
 
 // Click Add Product 4
 
-$("#product3").click(function() {        
-    addProduct(3, numberProduct);
+$("#product3").click(function() {
+    var quantity = $('#quantity3:input[type="number"]').val();
+    var name = $('#name3').html().replace(/ /g, '');
+    addProduct(3, quantity, name);
 })
 
 
@@ -89,31 +98,23 @@ function displayProduct(number) {
     }
 }
 
+function addProduct(number, quantity, nameProduct) {
+    if(allName.includes(nameProduct)) {
+        var numberSpan = parseInt($('#' + nameProduct + "Span").html());
 
-function addProduct(number, count) {
-    if(count <= 8) {
-        var name = $("#name" + number).html();
-        var price = parseInt($("#totalPrice" + number).html());
-        var total = parseInt($("#total").html()) + price;
-        
-        numberProduct++;
+        if(numberSpan + parseInt(quantity) <= 9) {
+            var newNumber = numberSpan + parseInt(quantity);
 
-        if(numberProduct == 1) {
-            $("#basket").html("Panier : " + numberProduct + " article");
-        } else if(numberProduct > 1) {
-            $("#basket").html("Panier : " + numberProduct + " articles");
+            $("#" + nameProduct + "Span").html(newNumber);
         } else {
-            $("#basket").html("Panier Vide");
+            console.log("C'est chaud");
         }
-
-        $("#total").html(total);
-        $("#basketDiv").append("<p class='" + price + "'>" + name + " <button type='submit' class='press btn red'><i class='fas fa-minus-circle'></i></button></p>");
     } else {
-        $("#alert").toggleClass("d-none");
+        allName.push(nameProduct);
+        var price = parseInt($('#price' + number).html());
+        var chiffre = quantity;
 
-        setTimeout(function() {
-            $("#alert").toggleClass("d-none");
-        }, 5e3)
+        $("#basketDiv").append("<p id=" + nameProduct + " class='" + price + "'>" + nameProduct + " (<span id='" + nameProduct + "Span'>" + chiffre + "</span>)<button type='submit' class='press btn red'><i class='fas fa-minus-circle'></i></button></p>");
     }
 }
 
