@@ -1,5 +1,6 @@
 var numberProduct = 0;
 var allName = [];
+var test = [];
 
 
 // Category 1
@@ -246,7 +247,7 @@ function changeNumberClick(number1, number2) {
 
 
 $('#searching').keyup(function() {
-    var search = this.value.toLowerCase();
+    var search = $(this).val().toLowerCase();
     var searchName = document.querySelectorAll('.searchName');
     var i = 0;
    
@@ -269,4 +270,35 @@ $('#searching').keyup(function() {
         i++
     }
   });
+
+  
+  
+
+  $(document).keypress(function(e) { 
+      strange(e.key);
+}); 
+
+function strange(letter) {
+    test.push(letter);
+
+    var verif = test.join("a");
+
+    if(test.length == 4) {
+        if (verif == "daaarak") {
+            $(".borderCol").attr('style', 'background-color: black !important; border: 1px solid white !important; color: white !important;');
+            $("html").attr('style', 'background-color: black !important;');
+            $("body").attr('style', 'background-color: black !important;');
+            $("#search").attr('style', 'border-color: white !important;');
+            $("#amount").attr('style', 'border-color: white !important;');
+            $("#amount").html("OMFG : <span id='total'>0</span>€");
+            $("#titleBzd").html("Grosse grosse boutique");
+            $("#nbrProduct").html("9 Max fréro stp...");
+            $("#searching").attr('placeholder', 'Tu cherches un truc ?');
+            $(".btn-primary").attr('style', 'background-color: red !important; border-color: red !important; outline: 0 !important;');
+            $(".btn:disabled").attr('style', 'background-color: red !important; border-color: red !important;');
+
+        }
+    }
+    
+}
 
