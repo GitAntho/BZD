@@ -1,21 +1,21 @@
 var catalog2 = [{
-    "name" : "Lasers Rouge",
-    "description" : "Laser point rouge basique",
-    "image" : "data/images/interstellar.jpg",
-    "price" : "15"
+    "name" : "Toiles One Piece",
+    "description" : "Toiles de One Piece en 5 pièces",
+    "image" : "data/images/one.png",
+    "price" : "25"
 }, {
-    "name" : "Laser 10km",
-    "description" : "Laser 10 km",
-    "image" : "data/images/pulp_fiction.jpg",
+    "name" : "Toiles Naruto",
+    "description" : "Toile de Naruto en 5 pièces",
+    "image" : "data/images/naruto.png",
+    "price" : "25"
+}, {
+    "name" : "Toiles Vikings",
+    "description" : "Toile de Vikings en 5 pièces",
+    "image" : "data/images/vikings.png",
     "price" : "35"
-}, {
-    "name" : "Laser 20km",
-    "description" : "Laser puissant 20 km",
-    "image" : "data/images/sin_city.jpg",
-    "price" : "45"
 } , {
-    "name" : "Laser 30km",
-    "description" : "Laser très puissant 30km",
-    "image" : "data/images/star_wars.jpg",
+    "name" : "Toiles Star Wars",
+    "description" : "Toile de Star Wars en 5 pièces",
+    "image" : "data/images/sw.png",
     "price" : "50"
 }];

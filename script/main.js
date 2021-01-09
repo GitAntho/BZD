@@ -248,14 +248,25 @@ function changeNumberClick(number1, number2) {
 $('#searching').keyup(function() {
     var search = this.value.toLowerCase();
     var searchName = document.querySelectorAll('.searchName');
+    var i = 0;
    
     Array.prototype.forEach.call(searchName, function(document) {
       if (document.innerHTML.toLowerCase().indexOf(search) > -1) {
-        document.style.display = 'block';
-        console.log(searchName);
+        document.style.display = 'block';        
       } else {
-        document.style.display = 'none';
+        document.style.display = 'none';        
       }
     });
+
+    while(i < 4) {
+
+        if ($('#name' + i).css('display') == 'none') {
+            $('#col' + i).css("display", "none");
+        } else {
+            $('#col' + i).css("display", "block");
+        }
+
+        i++
+    }
   });
 
