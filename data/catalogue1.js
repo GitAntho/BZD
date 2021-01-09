@@ -9,13 +9,13 @@ var catalog1 = [{
     "image" : "data/images/mina_gamer.jpg",
     "price" : "350"
 }, {
-    "name" : "Nounours Bio",
-    "description" : "Un nounours pure coton bio",
+    "name" : "Nounours Flippant",
+    "description" : "Un nounours à vous coller des frissons",
     "image" : "data/images/matrix.jpg",
     "price" : "55"
 } , {
-    "name" : "Petit Nounours",
-    "description" : "Un petit nounours",
+    "name" : "Nounours De Noel",
+    "description" : "Un petit nounours de noel",
     "image" : "data/images/lotr1.jpg",
     "price" : "15"
 }];

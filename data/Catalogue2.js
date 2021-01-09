@@ -15,7 +15,7 @@ var catalog2 = [{
     "price" : "45"
 } , {
     "name" : "Laser 30km",
-    "description" : "Laser très pouissant 30km",
+    "description" : "Laser très puissant 30km",
     "image" : "data/images/star_wars.jpg",
     "price" : "50"
 }];

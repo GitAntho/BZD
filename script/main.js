@@ -66,6 +66,8 @@ $("body").on("click", ".press", function() {
 
 function displayProduct(number) {
     $("#product-display").removeClass("d-none");
+    $("#searching").val("");
+    $(".searchName").css("display", "block");
 
 
     var i = 0;
@@ -95,11 +97,12 @@ function displayProduct(number) {
 
 function addProduct(number) {
     var quantity = $('#quantity' + number + ':input[type="number"]').val();
-    var nameProduct = $('#name' + number).html().replace(/ /g, '');
+    var nameProduct =$('#name' + number).html();
+    var nameId = $('#name' + number).html().replace(/ /g, '');
     var totalPrice = parseInt($("#totalPrice" + number).html().slice(0, -1));
     var total = parseInt($("#total").html()) + totalPrice;
 
-    $('#quantity' + number + ':input[type="number"]').val(0);
+    $('#quantity' + number + ':input[type="number"]').val("");
     $("#totalPrice" + number).html('0€');
     $('#product' + number).prop('disabled', true);
     
@@ -130,7 +133,7 @@ function addProduct(number) {
 
         $("#total").html(total);
 
-        $("#basketDiv").append("<p id=" + nameProduct + " class='" + price + "'>" + nameProduct + " (<span id='" + nameProduct + "Span'>" + chiffre + "</span>)<button type='submit' class='press btn red'><i class='fas fa-minus-circle'></i></button></p>");
+        $("#basketDiv").append("<p id=" + nameId + " class='" + price + "'>" + nameProduct + " (<span id='" + nameId + "Span'>" + chiffre + "</span>)<button type='submit' class='press btn red'><i class='fas fa-trash-alt'></i></button></p>");
     }
 }
 
@@ -240,3 +243,19 @@ function changeNumberClick(number1, number2) {
         $('#product' + number1).prop('disabled', false);
     }
 }
+
+
+$('#searching').keyup(function() {
+    var search = this.value.toLowerCase();
+    var searchName = document.querySelectorAll('.searchName');
+   
+    Array.prototype.forEach.call(searchName, function(document) {
+      if (document.innerHTML.toLowerCase().indexOf(search) > -1) {
+        document.style.display = 'block';
+        console.log(searchName);
+      } else {
+        document.style.display = 'none';
+      }
+    });
+  });
+

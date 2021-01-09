@@ -1,21 +1,21 @@
 var catalog3 = [{
-    "name" : "Briquet",
-    "description" : "Briquet basique",
+    "name" : "Toiles One Piece",
+    "description" : "Toiles de One Piece en 5 pièces",
     "image" : "data/images/avengers.jpg",
     "price" : "2"
 }, {
-    "name" : "Briquet Zyppo",
-    "description" : "Briquet Zyppo escence rechargeable",
+    "name" : "Toiles Naruto",
+    "description" : "Toile de Naruto en 5 pièces",
     "image" : "data/images/inception.jpg",
     "price" : "15"
 }, {
-    "name" : "Briquet Clipper",
-    "description" : "Briquet Clipper gaz rechargeable",
+    "name" : "Toiles Vikings",
+    "description" : "Toile de Vikings en 5 pièces",
     "image" : "data/images/shutter_island.jpg",
     "price" : "10"
 } , {
-    "name" : "Briquet Tempete  ",
-    "description" : "Briquet Tempete gaz rechargeable",
+    "name" : "Toiles Star Wars",
+    "description" : "Toile de Star Wars en 5 pièces",
     "image" : "data/images/taken.jpg",
     "price" : "20"
 }];

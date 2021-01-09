@@ -32,10 +32,10 @@
 
                     <!-- Product 1 -->
 
-                    <div class="col-3">
+                    <div class="col-3 searchName">
                         <img src ="#" id="image0" class="img-fluid mb-3"></img>
                         <h5>Nom</h5>
-                        <p id="name0"></p>
+                        <p id="name0" class="azeaze"></p>
                         <h5>Description</h5>
                         <p id="description0"></p>
                         <h5>Prix</h5>
@@ -50,7 +50,7 @@
 
                     <!-- Product 2 -->
 
-                    <div class="col-3">
+                    <div class="col-3 searchName">
                         <img src ="#" id="image1" class="img-fluid mb-3"></img>
                         <h5>Nom</h5>
                         <p id="name1"></p>
@@ -68,7 +68,7 @@
 
                     <!-- Product 3 -->
 
-                    <div class="col-3">
+                    <div class="col-3 searchName">
                         <img src ="#" id="image2" class="img-fluid mb-3"></img>
                         <h5>Nom</h5>
                         <p id="name2"></p>
@@ -86,7 +86,7 @@
 
                     <!-- Product 4 -->
 
-                    <div class="col-3">
+                    <div class="col-3 searchName">
                         <img src ="#" id="image3" class="img-fluid mb-3"></img>
                         <h5>Nom</h5>
                         <p id="name3"></p>
@@ -104,7 +104,13 @@
                 </div>
             </div>
             <div class="col-3 borderCol full-size">
-                <p class="h4 text-center" id="search">Champ de recherche</p>
+                <div id="search" class="text-center">
+                    <form action="#" method="POST">
+                        <fieldset>
+                            <input type="text" id="searching" name="search" placeholder="Rechercher...">
+                        </fieldset>
+                    </form>
+                </div>
                 <p class="h4 text-center" id="amount">Montant Total : <span id="total">0</span>€</p>
                 <div id="basketDiv">
                     <p class="h4 mb-4 text-center" id="basket">Panier Vide</p>
