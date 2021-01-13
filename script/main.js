@@ -108,14 +108,14 @@ function addProduct(number) {
     $('#product' + number).prop('disabled', true);
     
     if(allName.includes(nameProduct)) {
-        var numberSpan = parseInt($('#' + nameProduct + "Span").html());
+        var numberSpan = $("#" + nameId + "Span").html();
 
-        if(numberSpan + parseInt(quantity) <= 9) {
-            var newNumber = numberSpan + parseInt(quantity);
+        if(parseInt(numberSpan) + parseInt(quantity) <= 9) {
+            var newNumber = parseInt(numberSpan) + parseInt(quantity);
 
             $("#total").html(total);
 
-            $("#" + nameProduct + "Span").html(newNumber);
+            $("#" + nameId + "Span").html(newNumber);
         } else {
             $("#alert").toggleClass("d-none");
             setTimeout(function() {
@@ -271,9 +271,6 @@ $('#searching').keyup(function() {
     }
   });
 
-  
-  
-
   $(document).keypress(function(e) { 
       strange(e.key);
 }); 
@@ -301,4 +298,3 @@ function strange(letter) {
     }
     
 }
-
